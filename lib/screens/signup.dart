@@ -5,13 +5,13 @@ class SignUp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-      home: new SignUpPage(),
-      theme: new ThemeData(
-        primarySwatch: Colors.blue
-      )
+        debugShowCheckedModeBanner: false,
+        home: new SignUpPage(),
+        theme: new ThemeData(
+            primarySwatch: Colors.blue
+        )
     );
-  }
-}
+  }}
 
 class SignUpPage extends StatefulWidget{
   @override
@@ -41,44 +41,53 @@ class SignUpPageState extends State<SignUpPage>{
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color(0xFFf5f5f5),
+                      fillColor: Color(0xFFeceff1),
                       hintText: 'Auto Generate',
-                      contentPadding: const EdgeInsets.all(15.0 ),
-                      border: InputBorder.none
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(0),
+                      ),
                     ),
                   ),
                   SizedBox(height: 100.0,),
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color(0xFFf5f5f5),
-                      hintText: 'Email ID',
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Auto Generate',
                       contentPadding: const EdgeInsets.all(15.0),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFe0e0e0)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(0),
                       ),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                      )
                     ),
                   ),
                   SizedBox(height: 100.0,),
                   TextField(
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFf5f5f5),
-                        hintText: 'Mobile',
-                        contentPadding: const EdgeInsets.all(15.0),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFe0e0e0)),
+                      filled: true,
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Auto Generate',
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(0),
-                        ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                        )
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             )
