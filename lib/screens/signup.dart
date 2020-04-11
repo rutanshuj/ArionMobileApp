@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'add.dart';
 
 class SignUp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new MaterialApp(
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: new SignUpPage(),
-        theme: new ThemeData(
+        home: SignUpPage(),
+        theme: ThemeData(
             primarySwatch: Colors.blue
         )
     );
-  }}
+  }
+}
 
 class SignUpPage extends StatefulWidget{
   @override
-  State createState()=> new SignUpPageState();
+  State createState()=> SignUpPageState();
 }
 
 class SignUpPageState extends State<SignUpPage>{
@@ -27,10 +29,10 @@ class SignUpPageState extends State<SignUpPage>{
 
   @override
   Widget build(BuildContext context){
-    return new Scaffold(
-      body: new Stack(
+    return Scaffold(
+      body: Stack(
         children: <Widget>[
-          new Container(
+          Container(
               padding: const EdgeInsets.fromLTRB(15, 30, 0, 0),
               child: Text(
                 "Sign Up",
@@ -41,7 +43,7 @@ class SignUpPageState extends State<SignUpPage>{
                 ),
               )
           ),
-          new Form(
+          Form(
             child: Container(
               padding: const EdgeInsets.all(15),
               width: double.infinity,
@@ -53,7 +55,7 @@ class SignUpPageState extends State<SignUpPage>{
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Name",
-                      style: TextStyle(color: Color(0xFF80cbc4), fontSize: 30, height: 2)
+                        style: TextStyle(color: Color(0xFF80cbc4), fontSize: 25)
                     )
                   ),
                   TextField(
@@ -77,7 +79,7 @@ class SignUpPageState extends State<SignUpPage>{
                       alignment: Alignment.centerLeft,
                       child: Text(
                           "Email ID",
-                          style: TextStyle(color: Color(0xFF80cbc4), fontSize: 30)
+                          style: TextStyle(color: Color(0xFF80cbc4), fontSize: 25)
                       )
                   ),
                   TextField(
@@ -100,7 +102,7 @@ class SignUpPageState extends State<SignUpPage>{
                       alignment: Alignment.centerLeft,
                       child: Text(
                           "Mobile",
-                          style: TextStyle(color: Color(0xFF80cbc4), fontSize: 30)
+                          style: TextStyle(color: Color(0xFF80cbc4), fontSize: 25)
                       )
                   ),
                   TextField(
@@ -120,7 +122,27 @@ class SignUpPageState extends State<SignUpPage>{
                   ),
                 ],
               ),
-            )
+            ),
+          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    padding: EdgeInsets.only(top: 550.0),
+                    child: MaterialButton(
+                        height: 50.0,
+                        minWidth: 140.0,
+                        color: Colors.teal,
+                        textColor: Colors.white,
+                        child: Text("Create Account"),
+                        onPressed: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=> Add())
+                          );
+                        }
+                    )
+                )
+              ]
           )
         ],
       )

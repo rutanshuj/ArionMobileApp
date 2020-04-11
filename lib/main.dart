@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'screens/signup.dart';
 
-void main()=> runApp(new MyApp());
+void main()=> runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new LoginPage(),
-      theme: new ThemeData(
+      home: LoginPage(),
+      theme: ThemeData(
         primarySwatch: Colors.blue
       )
     );
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget{
 
 class LoginPage extends StatefulWidget{
   @override
-  State createState()=> new LoginPageState();
+  State createState()=> LoginPageState();
 }
 
 class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin{
@@ -29,11 +29,11 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
   @override
   void initState(){
     super.initState();
-    _iconAnimationController = new AnimationController(
+    _iconAnimationController = AnimationController(
         vsync: this,
-        duration: new Duration(milliseconds: 500)
+        duration: Duration(milliseconds: 500)
     );
-    _iconAnimation = new CurvedAnimation(
+    _iconAnimation = CurvedAnimation(
         parent: _iconAnimationController,
         curve: Curves.easeOut
     );
@@ -44,41 +44,41 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
 
   @override
   Widget build(BuildContext context){
-    return new Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
-        body: new Stack(
+        body: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            new Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Image(
-                  image: new AssetImage("assets/arion-logo.png"),
+                Image(
+                  image: AssetImage("assets/arion-logo.png"),
                   height: _iconAnimation.value * 200,
                   width: _iconAnimation.value * 200,
                 ),
-                new Form(
-                  child: new Theme(
-                    data: new ThemeData(
+                Form(
+                  child: Theme(
+                    data: ThemeData(
                         brightness: Brightness.dark,
                         primarySwatch: Colors.teal,
-                        inputDecorationTheme: new InputDecorationTheme(
-                            labelStyle: new TextStyle(
+                        inputDecorationTheme: InputDecorationTheme(
+                            labelStyle: TextStyle(
                                 color: Colors.teal, fontSize: 20.0))),
                     child: Container(
                       padding: const EdgeInsets.all(40.0),
-                      child: new Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          new Padding(
+                          Padding(
                             padding: const EdgeInsets.only(top: 80.0),
                           ),
-                          new MaterialButton(
+                          MaterialButton(
                             height: 50.0,
                             minWidth: 140.0,
                             color: Colors.teal,
                             textColor: Colors.white,
-                            child: new Text("SIGN UP"),
+                            child: Text("SIGN UP"),
                             onPressed: (){
                               Navigator.push(context,
                                 MaterialPageRoute(builder: (context)=> SignUp())
