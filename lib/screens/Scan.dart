@@ -8,6 +8,17 @@ class Scan extends StatefulWidget {
 }
 
 class ScanState extends State<Scan> {
+
+  @override
+  void initState(){
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+
   String result = "Hey There !";
   Future scanQR() async{
     try{
@@ -34,10 +45,5 @@ class ScanState extends State<Scan> {
         result = "Unknown Error $ex";
       });
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

@@ -44,9 +44,101 @@ class AddPageState extends State<AddPage>{
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     ),
-    Text(
-      'Index 1: SENSORS',
-      style: optionStyle,
+    Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Container(
+              padding: const EdgeInsets.fromLTRB(15, 30, 0, 0),
+              child: Text(
+                "Add Sensors",
+                style: TextStyle(
+                  fontSize: 30,
+                  height: 2,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+          ),
+          Form(
+            child: Container(
+              padding: const EdgeInsets.all(15),
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Sensor 1',
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50.0),
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Sensor 2',
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50.0,),
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Sensor 3',
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50.0,),
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFeceff1),
+                      hintText: 'Sensor 4',
+                      contentPadding: const EdgeInsets.all(15.0),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                          borderSide: BorderSide(color: Color(0xFFbdbdbd))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ),
+        ],
+      ),
     )
   ];
 
