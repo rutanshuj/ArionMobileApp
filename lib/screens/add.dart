@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'scan.dart';
 
 class Add extends StatelessWidget{
   @override
@@ -26,32 +27,57 @@ class AddPageState extends State<AddPage>{
     super.initState();
   }
 
+  String result = "Hey There !";
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  List<Widget> _widgetOptions = <Widget>[
+    Scaffold(
+      body: Row(
+        
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: ScanState().scanQR,
+        label: Text('Scan'),
+        icon: Icon(Icons.camera_alt),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    ),
+    Text(
+      'Index 1: SENSORS',
+      style: optionStyle,
+    )
+  ];
+
+  void _onItemTapped(int index){
+    setState((){
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
 
-    int _currentIndex = 0;
     return Scaffold(
-      body: Container(),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        items: [
+        items:  const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               title: Text('DEVICES'),
-              backgroundColor: Colors.blue
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                title: Text('SENSORS'),
-                backgroundColor: Colors.blue
-            ),
-          ],
-        onTap: (index){
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              title: Text('SENSORS'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.teal,
+        onTap: _onItemTapped,
       ),
     );
   }
